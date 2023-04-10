@@ -82,6 +82,33 @@ function setClassAttribute(cell, i) {
     }
 }
 
+function prevMonth(event, elem, date, months, callback, id) {
+    if (!elem) {
+        console.log("elem is null");
+    }
+    elem.innerHTML = "";
+    if (date.getMonth() >= 1) {
+        date.setMonth(date.getMonth() - 1);
+    } else {
+        date.setYear(date.getFullYear() - 1);
+        date.setMonth(11);
+    }
+    createDateMonth(months, date, elem, callback, id);
+}
+
+function nextMonth(event, elem, date, months, callback, id) {
+    if (!elem) {
+        console.log("elem is null");
+    }
+    elem.innerHTML = "";
+    if (date.getMonth() <= 10) {
+        date.setMonth(date.getMonth() + 1);
+    } else {
+        date.setYear(date.getFullYear() + 1);
+        date.setMonth(0);
+    }
+    createDateMonth(months, date, elem, callback, id);
+}
 function addWeekDays(tblBody2) {
     var row3 = document.createElement("tr");
     var textVals3 = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
@@ -175,5 +202,12 @@ function createCell(id, date, val, callback) {
     cell.appendChild(val);
     cell.setAttribute("class", "black");
     return cell;
+}
+
+function clickDate(id, date, cell, callback) {
+    date.day = cell.firstChild.textContent;
+    date.year = date.getFullYear();
+    date.month = date.getMonth() + 1;
+    callback.call(this, id, date);
 }
 
