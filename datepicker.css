@@ -1,7 +1,7 @@
 .tbl1 {
     width: 200px;
-    background: black;
-    color: white;
+    background: orange;
+    color: blue;
 }
 .left {
     text-align: left;
@@ -14,21 +14,21 @@
 }
 .tbl2 {
     width: 200px;
-    background: white;
-    color: black;
+    background: orange;
+    color: blue;
     table-layout: fixed;
 }
 .tbl3 {
     width: 200px;
-    background: white;
-    color: black;
+    background: green;
+    color: yellow;
     table-layout: fixed;
 }
 .gray {
     text-align: center;
-    color: gray;
+    color: red;
 }
 .black {
     text-align: center;
-    color: black;
+    color: yellow;
 }
